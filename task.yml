@@ -1,0 +1,8 @@
+--- #task playbook demo
+- hosts: DevOps
+  user: host
+  connection: ssh
+  become: yes
+  tasks: 
+         - name: install httpd on AMI
+           action: yum name=httpd state=installed 

@@ -1,0 +1,11 @@
+--- #variable test demo
+- hosts: DevOps
+  user: host
+  connections: ssh
+  become: yes
+  vars: 
+        pkgname= httpd
+      
+  tasks:
+        - name: install httpd on AMI
+          action: yum name='{{pkgname}}' state=installed        

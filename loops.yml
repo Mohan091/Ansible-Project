@@ -1,0 +1,14 @@
+--- #loops test file
+- hosts: DevOps
+  user: host
+  connection: ssh
+  become: yes
+  tasks:
+         - name: add a list of users
+           action: name='{{items}}' state=present
+           with items:
+                      -mohan
+                      -sachin
+                      -pawan
+                      -suraj
+                      

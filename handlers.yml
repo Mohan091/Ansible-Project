@@ -1,0 +1,13 @@
+--- #handlers test file
+- hosts: DevOps
+  user: host
+  become: yes
+  connection: ssh
+  tasks:
+         - name: install HTTPD on AMI
+           action: yum name=httpd state=installed
+           notify: restart httpd
+  
+  handlers:
+         - name: restart httpd
+           action: service name=httpd state=restarted         
